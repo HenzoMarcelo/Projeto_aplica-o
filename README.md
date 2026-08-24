@@ -1,2 +1,10 @@
 # Projeto_aplica-o
-Um projeto criado com a finalidade de promover soluções simples para o dia a dia das pessoas.
+Gerenciador de Tarefas
+
+Aplicação voltada para a organização de tarefas do dia a dia. Sua criação foi impulsionada pelo desejo de ajudar as pessoas a gerenciar a vida de modo que a mesma fique mais leve.
+
+Funcionalidades:
+
+-
+
+

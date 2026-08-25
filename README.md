@@ -6,7 +6,7 @@ Aplicação voltada para a organização de tarefas do dia a dia. Sua criação 
 Funcionalidades:
 
 -classificar as tarefas
--apresentar prazos e prioridade (baixa, média e aĺta) de cada tarefa.
+-apresentar prazos e prioridade (baixa, média e alta) de cada tarefa.
 -opção de pesquisar tarefa pelo nome.
 -modo escuro.
 

@@ -8,7 +8,4 @@ Funcionalidades:
 -classificar as tarefas
 -apresentar prazos e prioridade (baixa, média e alta) de cada tarefa.
 -opção de pesquisar tarefa pelo nome.
--modo escuro.
-
-
-
+-modo escuro/claro.

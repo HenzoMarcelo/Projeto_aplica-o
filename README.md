@@ -28,6 +28,9 @@ Prisma
 * Curtir publicações(Influencia as recomendações do feed)
 * É possível favoritar publicações
 
+### Sistema de pontos
+* A quantidade de publicações e pesquisas que o usuário fizer resulta no ganho de pontos que podem ser utilizados para adquirir: moldura de perfil, fonte estilizada de perfil, cor do campo de bio (que pode combinar com a moldura).
+
 ### Coleções
 
 * Criar álbuns com publicações salvas e de sua própria autoria

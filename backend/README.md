@@ -4,35 +4,35 @@ API REST desenvolvida com TypeScript, Express e PostgreSQL para autenticação d
 
 ## Tecnologias
 
-- Node.js
-- TypeScript
-- Express
-- PostgreSQL
-- `pg` para acesso ao banco de dados
-- `bcrypt` para hash de senhas
-- `jsonwebtoken` para autenticação JWT
-- `dotenv` para carregar variáveis de ambiente
+* Node.js
+* TypeScript
+* Express
+* PostgreSQL
+* `pg` para acesso ao banco de dados
+* `bcrypt` para hash de senhas
+* `jsonwebtoken` para autenticação JWT
+* `dotenv` para carregar variáveis de ambiente
 
 ## Requisitos
 
-- Node.js e npm instalados
-- PostgreSQL instalado e em execução
-- Um banco de dados criado para o projeto
+* Node.js e npm instalados
+* PostgreSQL instalado e em execução
+* Um banco de dados criado para o projeto
 
 ## Configuração
 
 1. Entre na pasta `backend`.
 2. Instale as dependências:
 
-   ```powershell
+```powershell
    npm install
    ```
 
 3. Crie ou revise o arquivo `.env` na pasta `backend`. Configure as variáveis abaixo com os valores do seu ambiente:
 
-   ```env
-   DATABASE_URL=postgresql://USUARIO:SENHA@localhost:5432/NOME_DO_BANCO
-   JWT_SECRET=COLOQUE_UM_SEGREDO_FORTE_AQUI
+```env
+   DATABASE\_URL=postgresql://USUARIO:SENHA@localhost:5432/NOME\_DO\_BANCO
+   JWT\_SECRET=COLOQUE\_UM\_SEGREDO\_FORTE\_AQUI
    PORT=3000
    ```
 
@@ -70,20 +70,20 @@ Base URL local: `http://localhost:3000`
 
 ### Verificação de saúde
 
-| Método | Endpoint | Autenticação | Descrição |
-|---|---|---|---|
-| GET | `/` | Não | Mensagem de funcionamento da API |
-| GET | `/health` | Não | Verifica a conexão com o PostgreSQL |
+|Método|Endpoint|Autenticação|Descrição|
+|-|-|-|-|
+|GET|`/`|Não|Mensagem de funcionamento da API|
+|GET|`/health`|Não|Verifica a conexão com o PostgreSQL|
 
 ### Autenticação
 
 Prefixo: `/api/auth`
 
-| Método | Endpoint | Autenticação | Descrição |
-|---|---|---|---|
-| POST | `/api/auth/register` | Não | Cadastra um usuário |
-| POST | `/api/auth/login` | Não | Autentica um usuário e retorna token JWT |
-| GET | `/api/auth/profile` | Bearer token | Retorna informações do usuário autenticado |
+|Método|Endpoint|Autenticação|Descrição|
+|-|-|-|-|
+|POST|`/api/auth/register`|Não|Cadastra um usuário|
+|POST|`/api/auth/login`|Não|Autentica um usuário e retorna token JWT|
+|GET|`/api/auth/profile`|Bearer token|Retorna informações do usuário autenticado|
 
 #### Cadastro — exemplo
 
@@ -91,7 +91,7 @@ Prefixo: `/api/auth`
 
 ```json
 {
-  "username": "usuario_teste",
+  "username": "usuario\_teste",
   "email": "usuario@example.com",
   "password": "UmaSenhaForte123"
 }
@@ -113,22 +113,22 @@ A resposta de login inclui os dados do usuário e um token JWT. Use esse token n
 #### Perfil — exemplo de cabeçalho
 
 ```http
-Authorization: Bearer SEU_TOKEN_JWT
+Authorization: Bearer SEU\_TOKEN\_JWT
 ```
 
 ### Publicações
 
 Prefixo: `/api/posts`
 
-Todas as rotas de publicações exigem autenticação com JWT no cabeçalho `Authorization: Bearer SEU_TOKEN_JWT`.
+Todas as rotas de publicações exigem autenticação com JWT no cabeçalho `Authorization: Bearer SEU\_TOKEN\_JWT`.
 
-| Método | Endpoint | Descrição |
-|---|---|---|
-| GET | `/api/posts` | Lista as publicações |
-| GET | `/api/posts/:id` | Busca uma publicação pelo ID |
-| POST | `/api/posts` | Cria uma publicação para o usuário autenticado |
-| PUT | `/api/posts/:id` | Atualiza uma publicação do usuário autenticado |
-| DELETE | `/api/posts/:id` | Exclui uma publicação do usuário autenticado |
+|Método|Endpoint|Descrição|
+|-|-|-|
+|GET|`/api/posts`|Lista as publicações|
+|GET|`/api/posts/:id`|Busca uma publicação pelo ID|
+|POST|`/api/posts`|Cria uma publicação para o usuário autenticado|
+|PUT|`/api/posts/:id`|Atualiza uma publicação do usuário autenticado|
+|DELETE|`/api/posts/:id`|Exclui uma publicação do usuário autenticado|
 
 #### Criar publicação — exemplo
 
@@ -159,14 +159,14 @@ Envie pelo menos um campo para atualizar. A API restringe a atualização e a ex
 
 ## Códigos HTTP usados
 
-- `200 OK`: operação concluída.
-- `201 Created`: publicação criada.
-- `204 No Content`: publicação excluída.
-- `400 Bad Request`: dados ou ID inválidos.
-- `401 Unauthorized`: token ausente/inválido ou credenciais incorretas.
-- `404 Not Found`: publicação não encontrada ou não pertence ao usuário autenticado.
-- `409 Conflict`: conflito no cadastro, como e-mail duplicado.
-- `500 Internal Server Error`: erro inesperado no servidor.
+* `200 OK`: operação concluída.
+* `201 Created`: publicação criada.
+* `204 No Content`: publicação excluída.
+* `400 Bad Request`: dados ou ID inválidos.
+* `401 Unauthorized`: token ausente/inválido ou credenciais incorretas.
+* `404 Not Found`: publicação não encontrada ou não pertence ao usuário autenticado.
+* `409 Conflict`: conflito no cadastro, como e-mail duplicado.
+* `500 Internal Server Error`: erro inesperado no servidor.
 
 As respostas exatas podem variar conforme a operação e os erros tratados no controlador.
 
@@ -187,10 +187,45 @@ O fluxo esperado das operações é:
 
 `Route → Controller → Service → Repository → PostgreSQL`
 
+
+
+\## Modelagem do Banco de Dados
+
+
+
+O projeto possui um arquivo de modelagem do banco de dados no formato Draw.io, armazenado em:
+
+
+
+`backend/docs/DER\_Prisma\_BancoDeDados.drawio`
+
+
+
+O arquivo contém o modelo visual do banco de dados do Projeto Prisma e pode ser aberto e editado utilizando o \[Draw.io](https://app.diagrams.net/).
+
+
+
+\### Como visualizar a modelagem
+
+
+
+1\. Acesse o \[Draw.io](https://app.diagrams.net/).
+
+2\. Escolha a opção para abrir um diagrama existente no dispositivo.
+
+3\. Selecione o arquivo `DER\_Prisma\_BancoDeDados.drawio`, localizado na pasta `backend/docs/` do projeto.
+
+
+
+O arquivo original também está disponível no repositório do projeto, no GitHub.
+
+
+
 ## Observações para a entrega
 
-- Não versionar o `.env` nem publicar senhas ou o segredo JWT.
-- Confirmar que as migrations e a seed podem ser executadas conforme as instruções do projeto.
-- Revisar a modelagem conceitual e o script do banco exigidos pela atividade.
-- Executar `npm run build` e testar cadastro, login, perfil e as operações do CRUD antes da entrega.
-- O script `npm test` atualmente é apenas um placeholder e não executa testes automatizados.
+* Não versionar o `.env` nem publicar senhas ou o segredo JWT.
+* Confirmar que as migrations e a seed podem ser executadas conforme as instruções do projeto.
+* Revisar a modelagem conceitual e o script do banco exigidos pela atividade.
+* Executar `npm run build` e testar cadastro, login, perfil e as operações do CRUD antes da entrega.
+* O script `npm test` atualmente é apenas um placeholder e não executa testes automatizados.
+
